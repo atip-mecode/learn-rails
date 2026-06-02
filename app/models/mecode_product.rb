@@ -1,3 +1,3 @@
 class MecodeProduct < ApplicationRecord
-validates :name,re presence: true
+validates :name,presence: true
 end

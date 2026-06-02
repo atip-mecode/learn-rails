@@ -1,0 +1,10 @@
+<h1>MecodeProducts#index</h1>
+
+<%= link_to "New product", new_mecode_product_path %>
+<div id="products">
+  <% @products.each do |product| %>
+    <div>            <%= link_to product.name, mecode_product_path(product.id) %>
+    </div>
+  <% end %>
+</div>
+<p>Find me in app/views/mecode_products/index.html.erb</p>
