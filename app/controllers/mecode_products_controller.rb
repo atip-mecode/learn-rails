@@ -1,6 +1,6 @@
 class MecodeProductsController < ApplicationController
 
-  before_action :set_mecode_product, only: %i[ show edit update ]
+  before_action :set_mecode_product, only: %i[ show edit update destroy]
 
   def show
   end
@@ -10,6 +10,11 @@ class MecodeProductsController < ApplicationController
 
   def index
     @products = MecodeProduct.all
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to mecode_products_path
   end
 
   def new
@@ -28,7 +33,6 @@ class MecodeProductsController < ApplicationController
 
 
   def update
-    @product = MecodeProduct.find(params[:id])
     if @product.update(product_name)
       redirect_to @product
     else
