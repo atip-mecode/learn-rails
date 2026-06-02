@@ -1,0 +1,1 @@
+it a project used to learn rails
