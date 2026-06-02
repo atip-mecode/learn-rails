@@ -42,7 +42,7 @@ allow_unauthenticated_access only: %i[ index show ]
 
   private
   def product_name
-    params.expect(mecode_product: [ :name ])
+    params.expect(mecode_product: [ :name, :description ])
   end
 
   def set_mecode_product

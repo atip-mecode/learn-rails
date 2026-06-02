@@ -1,6 +1,6 @@
 <% cache @product do %>
 <h1><%= @product.name %></h1>
-
+<%= @product.description %>
 <%= link_to "Back", mecode_products_path %>
 <% if authenticated? %>
 <%= link_to "Edit", edit_mecode_product_path(@product) %>

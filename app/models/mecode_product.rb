@@ -1,3 +1,4 @@
 class MecodeProduct < ApplicationRecord
-validates :name,presence: true
+   has_rich_text :description
+  validates :name,presence: true
 end
