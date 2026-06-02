@@ -1,10 +1,15 @@
 class MecodeProductsController < ApplicationController
-  def index
-    @products = MecodeProduct.all
-  end
+
+  before_action :set_mecode_product, only: %i[ show edit update ]
 
   def show
-   @product = MecodeProduct.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def index
+    @products = MecodeProduct.all
   end
 
   def new
@@ -20,9 +25,7 @@ class MecodeProductsController < ApplicationController
     end
   end
 
-  def edit
-    @product = MecodeProduct.find(params[:id])
-  end
+
 
   def update
     @product = MecodeProduct.find(params[:id])
@@ -36,5 +39,9 @@ class MecodeProductsController < ApplicationController
   private
   def product_name
     params.expect(mecode_product: [ :name ])
+  end
+
+  def set_mecode_product
+     @product = MecodeProduct .find(params[:id])
   end
 end
