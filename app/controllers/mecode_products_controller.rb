@@ -30,8 +30,6 @@ allow_unauthenticated_access only: %i[ index show ]
     end
   end
 
-
-
   def update
     if @product.update(product_name)
       redirect_to @product
@@ -42,7 +40,7 @@ allow_unauthenticated_access only: %i[ index show ]
 
   private
   def product_name
-    params.expect(mecode_product: [ :name, :description,:featured_image ])
+    params.expect(mecode_product: [ :name, :description, :featured_image, :inventory_count  ])
   end
 
   def set_mecode_product
