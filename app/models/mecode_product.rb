@@ -1,5 +1,6 @@
 class MecodeProduct < ApplicationRecord
-    has_many :subscribers, dependent: :destroy
+  include Notifications
+  has_many :subscribers, dependent: :destroy
    has_rich_text :description
    has_one_attached :featured_image
   validates :name, presence: true

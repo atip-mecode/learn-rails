@@ -2,8 +2,8 @@
 
 one:
   mecode_product: one
-  email: MyString
+  email: atip@mecode.asia
 
 two:
-  mecode_product: two
-  email: MyString
+  mecode_product: one
+  email: atip@mecode.asia
